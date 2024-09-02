@@ -1,0 +1,14 @@
+version: '3.9'
+
+services:
+  backend:
+    container_name: downloader_backend
+    build: .
+    command: python manage.py runserver 0.0.0.0:8004
+    volumes:
+      - ./core:/app
+    ports:
+      - "8004:8004"
+    environment:
+      - DEBUG=True
+      - SECRET_KEY=django-insecure-dgt-^7pbvlqcm3x3jovke@rc=5!d-n%907-d7($s%bp4s7p9z1
